@@ -11,22 +11,22 @@
 - [Teaching Staff](#teaching-staff)
 - [Assignment: Storms of High-energy Particles](#assignment-storms-of-high-energy-particles)
   - [Introduction](#introduction)
-- [Sequential code description](#sequential-code-description)
-  - [Program Arguments](#program-arguments)
-  - [Wave file format](#wave-file-format)
-  - [Functional description](#functional-description)
-  - [Debug mode](#debug-mode)
-- [Project Development and Submission](#project-development-and-submission)
-  - [Working rules](#working-rules)
-  - [Working methodology](#working-methodology)
-    - [OpenGL solution](#opengl-solution)
-  - [Grading Criteria](#grading-criteria)
-    - [Group grading criteria (G)](#group-grading-criteria-g)
-    - [Individual grading criteria (S)](#individual-grading-criteria-s)
-    - [Individual lab grading (L)](#individual-lab-grading-l)
-    - [Grade discussion](#grade-discussion)
-  - [Project Report Format, Structure, and Important Dates](#project-report-format-structure-and-important-dates)
-- [Version history:](#version-history)
+  - [Sequential code description](#sequential-code-description)
+    - [Program Arguments](#program-arguments)
+    - [Wave file format](#wave-file-format)
+    - [Functional description](#functional-description)
+    - [Debug mode](#debug-mode)
+  - [Project Development and Submission](#project-development-and-submission)
+    - [Working rules](#working-rules)
+    - [Working methodology](#working-methodology)
+      - [OpenGL solution](#opengl-solution)
+    - [Grading Criteria](#grading-criteria)
+      - [Group grading criteria (G)](#group-grading-criteria-g)
+      - [Individual grading criteria (S)](#individual-grading-criteria-s)
+      - [Individual lab grading (L)](#individual-lab-grading-l)
+      - [Grade discussion](#grade-discussion)
+    - [Project Report Format, Structure, and Important Dates](#project-report-format-structure-and-important-dates)
+- [Version history](#version-history)
 
 
 ## Teaching Staff
@@ -113,9 +113,9 @@ Result: 14 0.381967 26 0.499453 10 0.
 
 *Figure 2: Example of output of the program in debug mode for an array of 30 positions and three waves of particles.*
 
-## Sequential code description
+### Sequential code description
 
-### Program Arguments 
+#### Program Arguments 
 
 The program receives the following arguments:
 | Argument | Description |
@@ -123,7 +123,7 @@ The program receives the following arguments:
 | `size`   | Number of control points, or array positions to store energy values. |
 | `list of wave files` | A sequence of filenames with the information of each wave. The same file name can appear several times. |
 
-### Wave file format
+#### Wave file format
 
 Particle information is read from a text file and stored in an array. The base type of
 this array is a structure with fields for the details of each particle on the wave. The first
@@ -135,7 +135,7 @@ Students are **strongly encouraged** to manually create or automatically generat
 
 Several examples are provided along with the code. You are allowed (and encouraged) to share your own wave files and simulation results with your colleagues, preferably *publicly* in the Piazza forum.
 
-### Functional description
+#### Functional description
 
 The program first reads the wave files and stores each one in an array of particles. Then, for each wave, it executes the same stages as listed below.
 
@@ -143,13 +143,13 @@ The program first reads the wave files and stores each one in an array of partic
 2. **The relaxation process.** In this phase the material reacts by slightly distributing its charge. Each control point is updated with the average value of three points: the previous one, the point itself, and the next one. To avoid destroying the original values in the array while they are still needed to update other neighbors, the array values are first copied to a second ancillary array before the relaxation. The old values are read from the ancillary array, while the new values are written to the original array.
 3. **Maximum energy point location.** In this last stage that process each wave, the point with the maximum energy is located and its value and position are stored. After all the waves have been processed, the maxima and positions for all waves are printed.
 
-### Debug mode
+#### Debug mode
 
 If the source is compiled with the `-DDEBUG` flag, and the array size is not greater than 35 cells, a graphical representation of the results is presented, as discussed before. This output can be compared before and after program modifications. Consider executing a program several times with the same parameters to try to detect random changes in the output originated by race conditions.
 
-## Project Development and Submission
+### Project Development and Submission
 
-### Working rules
+#### Working rules
 
 The following working rules apply. As this list is not exhaustive, in case of doubt do not hesitate in asking the teaching staff on Piazza.
 
@@ -165,7 +165,7 @@ The following working rules apply. As this list is not exhaustive, in case of do
 - The project report must have the look and feel of a research article, using the templates (Word or LATEX) provided in the folder “Templates” in the original repository. If you use LATEX, please use the “bare_jrnl_compsoc.tex” with front size 10. If you use Word, leave the font size as is.
 - The project report is limited to a maximum of 4 pages (see Section 3.4 for more info on the Project’s Report). You may (and should) use a search engine to learn on how to write a research article.
 
-### Working methodology
+#### Working methodology
 
 You are given a reference sequential version of the code (energy_storms.c), and another identical source file (energy_storms_cuda.cu or energy_storms_opengl.c) to develop the parallel CUDA or OpenGL version.
 
@@ -186,15 +186,15 @@ The following strategy is recommended:
 13. If your results in the cluster do not match your expectations, go back to your development machine and to step 4.
 14. Write your report. See Section 3.4 for suggestions/recommendations/rules for the report.
 
-#### OpenGL solution
+##### OpenGL solution
 
 *Remember that if you decide to use OpenGL, you will need to define a separate .cl file for your kernel code, see the Lab 02 code for an example.*
 
-### Grading Criteria
+#### Grading Criteria
 
 Some general advice: spending almost all of your project time programming and optimising your code, and only leaving the last hours to quickly write your report, will most certainly result in a project grade much below your expectations. So, leave at leastone week for benchmarking your solution, and for creating and writing your project report!
 
-#### Group grading criteria (G)
+##### Group grading criteria (G)
 
 The **group grade** (G) is the same to all the elements of the group and will strongly depend on our appreciation of the group’s work as perceivable from the written report. Other relevant criteria include: 
 
@@ -204,7 +204,7 @@ The **group grade** (G) is the same to all the elements of the group and will st
 - execution time/performance;
 - scalability.
 
-#### Individual grading criteria (S)
+##### Individual grading criteria (S)
 
 The **individual grade** (S) is potentially different for each group member and will strongly depend on both: the work division as reported by the group; and on my own appreciation of the individual contribution of each group member to the joint group’s work, as perceivable from the written report. Other relevant criteria include: 
 
@@ -212,7 +212,7 @@ The **individual grade** (S) is potentially different for each group member and 
 - size and number of commits;
 - meaningfulness of commit messages.
 
-#### Individual lab grading (L)
+##### Individual lab grading (L)
 
 The **total individual lab grade** (L) will be calculated as a weighted averaged following the formula:
 
@@ -220,11 +220,11 @@ The **total individual lab grade** (L) will be calculated as a weighted averaged
 L = 0.7 × (G) + 0.3 × (S)
 ```
 
-#### Grade discussion
+##### Grade discussion
 
 Both the group members and the professor may ask for an individual or collective (group) presentation and discussion of the project. As a result of such a presentation and discussion, both the group grade (G) and the individual grade (S) may be revised up or downwards.
 
-### Project Report Format, Structure, and Important Dates
+#### Project Report Format, Structure, and Important Dates
 
 The report shall be written strictly following the format provided in the templates folder in the source repository and have the *"look & feel"* of a research paper. The report length is limited to four pages of text and graphics, plus one extra page for:
 
@@ -235,7 +235,7 @@ The report shall be written strictly following the format provided in the templa
 | Individual contribution(s) | Please present your group working methodology and list clearly: i) how the work was divided between the group members, and ii) the relative contribution of each member (in percentage). For example, A did whatever (30%), and B did a lot of stuff (70%). If the group members cannot agree in the terms/contents for this sectin, add one (identified) separate statement for each group member. |
 | Comments, criticisms, and suggestions | All your comments, critics and suggestions are very welcome. My goal is to provide you with an interesting and educational project (and course) and all your feedback is very welcome. Of course this section will have **no impact** on your grade. |
 
-## Version history:
+## Version history
 
 
 | Date | Version | Description |
