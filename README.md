@@ -154,7 +154,7 @@ If the source is compiled with the `-DDEBUG` flag, and the array size is not gre
 The following working rules apply. As this list is not exhaustive, in case of doubt do not hesitate in asking the teaching staff on Piazza.
 
 - The project work will be done in grops of 3 students (unless explicitly authorized otherwise).
-- Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, , where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`.
+- Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`.
 - Remember that your new repository must be private and shared only among the group members. 
 - The group must respect and use the “Git Workflow”. Each member will have a local copy of the repository in his/her computer where individual work shall take place.
 
