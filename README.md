@@ -3,7 +3,7 @@
 - Course: Computação de Alto Desempenho (High-Performance Computing), DI, FCT NOVA, 2023/2024
 - Date: Monday, 9th October 2023
 - Deadline for the project submission: 7th November, 2023
-- Classroom link: TODO
+- Classroom link: <https://classroom.github.com/a/ZZjBbV1W>
 - Submission form: <https://docs.google.com/spreadsheets/d/1D-LBgeWHZICbJusohI_RF1JbGhfIyjuf/edit#gid=1300327889>
 
 ## Table of Contents <!-- omit in toc -->
@@ -154,7 +154,7 @@ If the source is compiled with the `-DDEBUG` flag, and the array size is not gre
 The following working rules apply. As this list is not exhaustive, in case of doubt do not hesitate in asking the teaching staff on Piazza.
 
 - The project work will be done in grops of 3 students (unless explicitly authorized otherwise).
-- Each group must use the [GitHub classroom link](TODO) to create a new repository for producing their project code and report. Your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`, where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members.
+- Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, , where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`.
 - Remember that your new repository must be private and shared only among the group members. 
 - The group must respect and use the “Git Workflow”. Each member will have a local copy of the repository in his/her computer where individual work shall take place.
 
@@ -171,7 +171,7 @@ You are given a reference sequential version of the code (energy_storms.c), and 
 
 The following strategy is recommended:
 
-1. Download the source code by using the following classroom link: <TODO>.
+1. Download the source code by using the following classroom link: <https://classroom.github.com/a/ZZjBbV1W>.
 2. Study the original source code and be sure you understand it. Please feel free to discuss the source code with your colleagues (and the teachers) in Piazza or, if necessary, directly with the teachers.
 3. Identify the best candidate statements/functions to exploit parallelism using your preferred programming toolset.
 4. Identify and remove the code dependences that may hinder the parallelization correctness and/or performance impact.
