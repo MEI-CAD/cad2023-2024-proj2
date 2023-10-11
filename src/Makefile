@@ -64,4 +64,4 @@ clean:
 
 # Compile in debug mode
 debug:
-	make DEBUG=-DDEBUG
+	make DEBUG=-DDEBUG all
