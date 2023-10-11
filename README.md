@@ -19,7 +19,7 @@
   - [Project Development and Submission](#project-development-and-submission)
     - [Working rules](#working-rules)
     - [Working methodology](#working-methodology)
-      - [OpenGL solution](#opengl-solution)
+      - [OpenCL solution](#OpenCL-solution)
     - [Grading Criteria](#grading-criteria)
       - [Group grading criteria (G)](#group-grading-criteria-g)
       - [Individual grading criteria (S)](#individual-grading-criteria-s)
@@ -36,7 +36,7 @@
 
 ## Assignment: Storms of High-energy Particles
 
-**Task: Write a CUDA *or* OpenGL program that implements a simulation of high-energy particle bombardment on an exposed surface.**
+**Task: Write a CUDA *or* OpenCL program that implements a simulation of high-energy particle bombardment on an exposed surface.**
 
 Please read this document carefully. This is the project assignment for the course of High-Performance Computing, edition 2023-24. This assignment is strongly based in the EduHPC’18 Peachy Assignment from the Trasgo Research Group of the Universidad de Valladolid.
 
@@ -153,7 +153,7 @@ If the source is compiled with the `-DDEBUG` flag, and the array size is not gre
 
 The following working rules apply. As this list is not exhaustive, in case of doubt do not hesitate in asking the teaching staff on Piazza.
 
-- The project work will be done in grops of 3 students (unless explicitly authorized otherwise).
+- The project work will be done in grops of 2 students (unless explicitly authorized otherwise).
 - Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`.
 - Remember that your new repository must be private and shared only among the group members. 
 - The group must respect and use the “Git Workflow”. Each member will have a local copy of the repository in his/her computer where individual work shall take place.
@@ -167,7 +167,7 @@ The following working rules apply. As this list is not exhaustive, in case of do
 
 #### Working methodology
 
-You are given a reference sequential version of the code (energy_storms.c), and another identical source file (energy_storms_cuda.cu or energy_storms_opengl.c) to develop the parallel CUDA or OpenGL version.
+You are given a reference sequential version of the code (energy_storms.c), and another identical source file (energy_storms_cuda.cu or energy_storms_OpenCL.c) to develop the parallel CUDA or OpenCL version.
 
 The following strategy is recommended:
 
@@ -175,7 +175,7 @@ The following strategy is recommended:
 2. Study the original source code and be sure you understand it. Please feel free to discuss the source code with your colleagues (and the teachers) in Piazza or, if necessary, directly with the teachers.
 3. Identify the best candidate statements/functions to exploit parallelism using your preferred programming toolset.
 4. Identify and remove the code dependences that may hinder the parallelization correctness and/or performance impact.
-5. Use the CUDA/OpenGL programming model to parallelize the program.
+5. Use the CUDA/OpenCL programming model to parallelize the program.
 6. Run some preliminary tests to confirm the correctness of your parallelization approach.
 7. Evaluate the impact of your parallelization.
 8. Find potential performance bottlenecks (maybe using a profiler).
@@ -186,9 +186,9 @@ The following strategy is recommended:
 13. If your results in the cluster do not match your expectations, go back to your development machine and to step 4.
 14. Write your report. See Section 3.4 for suggestions/recommendations/rules for the report.
 
-##### OpenGL solution
+##### OpenCL solution
 
-*Remember that if you decide to use OpenGL, you will need to define a separate .cl file for your kernel code, see the Lab 02 code for an example.*
+*Remember that if you decide to use OpenCL, you will need to define a separate .cl file for your kernel code, see the Lab 02 code for an example.*
 
 #### Grading Criteria
 
