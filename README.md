@@ -1,9 +1,9 @@
 # Project Assignment: Storms of High-energy Particles <!-- omit in toc -->
 
 - Course: Computação de Alto Desempenho (High-Performance Computing), DI, FCT NOVA, 2023/2024
-- Date: Monday, 9th October 2023
-- Deadline for the project submission: 7th November, 2023
-- Classroom link: <https://classroom.github.com/a/ZZjBbV1W>
+- Date: Wednesday, 8th November 2023
+- Deadline for the project submission: 25th November, 2023
+- Classroom link: <TODO>
 - Submission form: <https://docs.google.com/spreadsheets/d/1D-LBgeWHZICbJusohI_RF1JbGhfIyjuf/edit#gid=1300327889>
 
 ## Table of Contents <!-- omit in toc -->
@@ -19,7 +19,6 @@
   - [Project Development and Submission](#project-development-and-submission)
     - [Working rules](#working-rules)
     - [Working methodology](#working-methodology)
-      - [OpenCL solution](#OpenCL-solution)
     - [Grading Criteria](#grading-criteria)
       - [Group grading criteria (G)](#group-grading-criteria-g)
       - [Individual grading criteria (S)](#individual-grading-criteria-s)
@@ -36,16 +35,20 @@
 
 ## Assignment: Storms of High-energy Particles
 
-**Task: Write a CUDA *or* OpenCL program that implements a simulation of high-energy particle bombardment on an exposed surface.**
+**Task: Write an MPI program that implements a simulation of high-energy particle bombardment on an exposed surface.**
 
 Please read this document carefully. This is the project assignment for the course of High-Performance Computing, edition 2023-24. This assignment is strongly based in the EduHPC’18 Peachy Assignment from the Trasgo Research Group of the Universidad de Valladolid.
 
-The deadline for the project submission (code and report) is 7th November 2023.
+The deadline for the project submission (code and report) is 25th November 2023.
 The project submission is done by filling the [Google Sheet form](https://docs.google.com/spreadsheets/d/1D-LBgeWHZICbJusohI_RF1JbGhfIyjuf/edit#gid=1300327889) with the commit ID of your code and project
 (the date/time of the commit ID must be before the deadline). More info on the
 project submission will be provided later.
 
+***Groups for the project must remain the same as phase 1***
+
 _Please remember that you are expected to develop your own project solution, and that any attempt to cheat implies immediate failure in the course!_
+
+**Note: When writing the report, you may reuse aspects of the introduction and abstract that you wrote in phase one of the project.**
 
 ### Introduction
 
@@ -153,8 +156,8 @@ If the source is compiled with the `-DDEBUG` flag, and the array size is not gre
 
 The following working rules apply. As this list is not exhaustive, in case of doubt do not hesitate in asking the teaching staff on Piazza.
 
-- The project work will be done in grops of 2 students (unless explicitly authorized otherwise).
-- Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj1_gNN_AAAAA_BBBBB`.
+- The project work will be done in the **same groups** of 2 students, as in the first phase of the project.
+- Each group must use the [GitHub classroom link](https://classroom.github.com/a/ZZjBbV1W) to create a new repository for producing their project code and report. When you click the link you will be asked to create or join an existing group. You **MUST** name your group `gNN_AAAAA_BBBBB`, where `gNN` is your group number (e.g., “g07”), `AAAAA`, and `BBBBB`, are the student numbers (IDs) of the two group members. If this is done correctly, your new repository name must be `cad2023-2024-proj2_gNN_AAAAA_BBBBB`.
 - Remember that your new repository must be private and shared only among the group members. 
 - The group must respect and use the “Git Workflow”. Each member will have a local copy of the repository in his/her computer where individual work shall take place.
 
@@ -185,10 +188,6 @@ The following strategy is recommended:
 12. Log into the [cluster](https://cluster.di.fct.unl.pt/) (credentials will be provided later) and run selected performance tests there (**remember that your CPU time in the cluster is limited**).
 13. If your results in the cluster do not match your expectations, go back to your development machine and to step 4.
 14. Write your report. See Section 3.4 for suggestions/recommendations/rules for the report.
-
-##### OpenCL solution
-
-*Remember that if you decide to use OpenCL, you will need to define a separate .cl file for your kernel code, see the Lab 02 code for an example.*
 
 #### Grading Criteria
 
@@ -235,9 +234,11 @@ The report shall be written strictly following the format provided in the templa
 | Individual contribution(s) | Please present your group working methodology and list clearly: i) how the work was divided between the group members, and ii) the relative contribution of each member (in percentage). For example, A did whatever (30%), and B did a lot of stuff (70%). If the group members cannot agree in the terms/contents for this sectin, add one (identified) separate statement for each group member. |
 | Comments, criticisms, and suggestions | All your comments, critics and suggestions are very welcome. My goal is to provide you with an interesting and educational project (and course) and all your feedback is very welcome. Of course this section will have **no impact** on your grade. |
 
+**Note: You may reuse aspects of the introduction and abstract that you wrote in phase one of the project, when writing the report.**
+
 ## Version history
 
 
 | Date | Version | Description |
 | ---- | ------- | ----------- |
-| 2023-10-09 | 1.0 | Initial version. |
+| 2023-11-07 | 1.0 | Initial version. |

@@ -6,7 +6,9 @@
  *
  * Version: 2.0
  *
- * Sequential reference code.
+ * Code prepared to be used with the Tablon on-line judge.
+ * The current Parallel Computing course includes contests using:
+ * OpenMP, MPI, and CUDA.
  *
  * (c) 2018 Arturo Gonzalez-Escribano, Eduardo Rodriguez-Gutiez
  * Grupo Trasgo, Universidad de Valladolid (Spain)
@@ -18,6 +20,17 @@
 #include<stdlib.h>
 #include<math.h>
 #include<sys/time.h>
+
+/* Headers for the MPI assignment versions */
+#include<mpi.h>
+
+/* Use fopen function in local tests. The Tablon online judge software 
+   substitutes it by a different function to run in its sandbox */
+#ifdef CP_TABLON
+#include "cputilstablon.h"
+#else
+#define    cp_open_file(name) fopen(name,"r")
+#endif
 
 /* Function to get wall time */
 double cp_Wtime(){
@@ -98,7 +111,7 @@ void debug_print(int layer_size, float *layer, int *positions, float *maximum, i
  * Function: Read data of particle storms from a file
  */
 Storm read_storm_file( char *fname ) {
-    FILE *fstorm = fopen( fname, "r" );
+    FILE *fstorm = cp_open_file( fname );
     if ( fstorm == NULL ) {
         fprintf(stderr,"Error: Opening storm file %s\n", fname );
         exit( EXIT_FAILURE );
@@ -138,6 +151,12 @@ Storm read_storm_file( char *fname ) {
 int main(int argc, char *argv[]) {
     int i,j,k;
 
+    int rank, size;
+
+    MPI_Init(&argc, &argv);
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &size);
+
     /* 1.1. Read arguments */
     if (argc<3) {
         fprintf(stderr,"Usage: %s <size> <storm_1_file> [ <storm_i_file> ] ... \n", argv[0] );
@@ -161,6 +180,7 @@ int main(int argc, char *argv[]) {
     }
 
     /* 2. Begin time measurement */
+    MPI_Barrier(MPI_COMM_WORLD);
     double ttotal = cp_Wtime();
 
     /* START: Do NOT optimize/parallelize the code of the main program above this point */
@@ -218,7 +238,10 @@ int main(int argc, char *argv[]) {
     /* END: Do NOT optimize/parallelize the code below this point */
 
     /* 5. End time measurement */
+    MPI_Barrier(MPI_COMM_WORLD);
     ttotal = cp_Wtime() - ttotal;
+
+    if ( rank == 0 ) {
 
     /* 6. DEBUG: Plot the result (only for layers up to 35 points) */
     #ifdef DEBUG
@@ -234,6 +257,8 @@ int main(int argc, char *argv[]) {
     for (i=0; i<num_storms; i++)
         printf(" %d %f", positions[i], maximum[i] );
     printf("\n");
+
+    }
 
     /* 8. Free resources */    
     for( i=0; i<argc-2; i++ )
