@@ -170,7 +170,7 @@ The following working rules apply. As this list is not exhaustive, in case of do
 
 #### Working methodology
 
-You are given a reference sequential version of the code (energy_storms.c), and another identical source file (energy_storms_cuda.cu or energy_storms_OpenCL.c) to develop the parallel CUDA or OpenCL version.
+You are given a reference sequential version of the code (energy_storms.c), and another identical source file (energy_storms_mpi.c) to develop the parallel MPI version.
 
 The following strategy is recommended:
 
@@ -178,7 +178,7 @@ The following strategy is recommended:
 2. Study the original source code and be sure you understand it. Please feel free to discuss the source code with your colleagues (and the teachers) in Piazza or, if necessary, directly with the teachers.
 3. Identify the best candidate statements/functions to exploit parallelism using your preferred programming toolset.
 4. Identify and remove the code dependences that may hinder the parallelization correctness and/or performance impact.
-5. Use the CUDA/OpenCL programming model to parallelize the program.
+5. Use the MPI programming model to parallelize the program.
 6. Run some preliminary tests to confirm the correctness of your parallelization approach.
 7. Evaluate the impact of your parallelization.
 8. Find potential performance bottlenecks (maybe using a profiler).
