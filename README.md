@@ -1,4 +1,4 @@
-# Project Assignment: Storms of High-energy Particles <!-- omit in toc -->
+# Project Assignment (Phase 2): Storms of High-energy Particles using MPI <!-- omit in toc -->
 
 - Course: Computação de Alto Desempenho (High-Performance Computing), DI, FCT NOVA, 2023/2024
 - Date: Wednesday, 8th November 2023
