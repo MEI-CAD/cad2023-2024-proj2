@@ -52,7 +52,7 @@ energy_storms_seq: energy_storms_seq.c
 	$(CC) $(DEBUG) $< $(LIBS) -o $@
 
 energy_storms_mpi: energy_storms_mpi.c
-	$(MPI) $(DEBUG) $< $(LIBS) -o $@
+	$(MPICC) $(DEBUG) $< $(LIBS) -o $@
 
 # Remove the target files
 clean:
