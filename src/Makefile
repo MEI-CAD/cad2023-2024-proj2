@@ -19,14 +19,14 @@
 
 # Compilers
 CC=gcc
-CUDACC=nvcc
+MPICC=mpicc
 
 # Flags for optimization and libs
 FLAGS=-O3
 LIBS=-lm
 
 # Targets to build
-OBJS=energy_storms_seq energy_storms_cuda energy_storms_opencl
+OBJS=energy_storms_seq energy_storms_mpi
 
 # Rules. By default show help
 help:
@@ -39,10 +39,9 @@ help:
 	@echo "CAD 2023/2024"
 	@echo
 	@echo "make energy_storms_seq	Build only the sequential version"
-	@echo "make energy_storms_cuda	Build only the CUDA version"
-	@echo "make energy_storms_opencl	Build only the OpenCL version"
+	@echo "make energy_storms_mpi
 	@echo
-	@echo "make all	Build all versions (Sequential, CUDA, OpenCL)"
+	@echo "make all	Build all versions (Sequential, MPI)"
 	@echo "make debug	Build all version with demo output for small arrays (size<=35)"
 	@echo "make clean	Remove targets"
 	@echo
@@ -52,11 +51,8 @@ all: $(OBJS)
 energy_storms_seq: energy_storms_seq.c
 	$(CC) $(DEBUG) $< $(LIBS) -o $@
 
-energy_storms_cuda: energy_storms_cuda.cu
-	$(CUDACC) $(DEBUG) $< $(LIBS) -o $@
-
-energy_storms_opencl: energy_storms_opencl.c
-	$(CC) $(DEBUG) $< $(LIBS) -o $@
+energy_storms_mpi: energy_storms_mpi.c
+	$(MPI) $(DEBUG) $< $(LIBS) -o $@
 
 # Remove the target files
 clean:
